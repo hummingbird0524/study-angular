@@ -1,0 +1,45 @@
+/****************************************************************************************************
+ * src/messages/messages.component.scss
+ *    messages.component.htmlに適用されるスタイルシート
+ ****************************************************************************************************/
+
+h2 {
+    position        : relative;
+    line-height     : 1.2;
+    color           : #4f4f4f;
+}
+
+body {
+    margin: 2em;
+
+    input[text], button {
+        color: crimson;
+    }
+}
+
+button {
+    background-color: #eeeeee;
+
+    .clear {
+        border          : none;
+        padding         : 5px 10px;
+        border-radius   : 4px;
+        cursor          : pointer;
+    }
+
+    :hover {
+        background-color: #cfd8dc;
+        cursor          : hand;
+    }
+
+    :disabled {
+        background-color: #eeeeee;
+        color           : #aaaaaa;
+        cursor          : auto;
+    }
+
+    .clear {
+        color           : #888888;
+        margin-bottom   : 12px;
+    }
+}

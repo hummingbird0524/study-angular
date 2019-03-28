@@ -1,6 +1,6 @@
 /****************************************************************************************************
- * src/app.component.ts
- *    Angular アプリのルートコンポーネントのロジック
+ * src/in-memory-data.service.ts
+ *    メッセージに関するデータ管理を行うサービス
  ****************************************************************************************************/
 
 /* --------------------------------------------------------------------------------------------------
@@ -8,21 +8,11 @@
  *    import { インポートするクラス as 別名 } from 'インポート元モジュール';
  * ------------------------------------------------------------------------------------------------ */
 
-import { Component } from '@angular/core';
-
 /* --------------------------------------------------------------------------------------------------
- * @Component
- *    コンポーネントの構成情報を宣言するデコレーター
- *    selector:     コンポーネントを識別する為の名称
- *    templateUrl:  対応するテンプレートファイル
- *    styleUrls:    対応するSassファイル
+ * InMemoryDbService
+ *    DBサーバーの代用となるサービスクラス
  * ------------------------------------------------------------------------------------------------ */
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 /* --------------------------------------------------------------------------------------------------
  * クラス定義
@@ -30,6 +20,18 @@ import { Component } from '@angular/core';
  *    ※exportを付けると、他クラスから参照(import)可能となる
  * ------------------------------------------------------------------------------------------------ */
 
-export class AppComponent {
-  title = 'Study Angular';
+export class InMemoryDataService implements InMemoryDbService {
+    createDb() {
+        const technologies = [
+            {id: 11, name: 'Java',       remark: '1.4,5,6,7,8'},
+            {id: 12, name: 'C#',         remark: ''},
+            {id: 13, name: 'Ruby',       remark: '2.5'},
+            {id: 14, name: 'HTML',       remark: '4,5'},
+            {id: 15, name: 'CSS',        remark: '2,3'},
+            {id: 16, name: 'JavaScript', remark: ''},
+            {id: 17, name: 'TypeScript', remark: ''}
+        ];
+
+        return  {technologies};
+    }
 }
